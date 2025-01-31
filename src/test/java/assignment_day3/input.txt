@@ -1,0 +1,3 @@
+Aaqil is a Student
+He loves coding
+Python is awesome

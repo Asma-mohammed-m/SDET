@@ -1,0 +1,34 @@
+import csv
+import os
+
+input_file = "D:/Day3/input1.txt"
+output_file = "D:/Day3/output1.csv"
+
+# Check if file is empty
+if os.path.exists(input_file) and os.path.getsize(input_file) == 0:
+    print(f"❌ Error: {input_file} is empty! No data written.")
+    exit()  # Stop execution
+
+try:
+    # Read the text file
+    with open(input_file, "r", encoding="utf-8") as txt_file:
+        lines = txt_file.readlines()
+
+    # If the file was initially empty but not detected earlier
+    if not lines:
+        print(f"❌ Error: {input_file} is empty! No data written.")
+        exit()
+
+    # Write to CSV
+    with open(output_file, "w", newline="", encoding="utf-8") as csv_file:
+        writer = csv.writer(csv_file)
+        for line in lines:
+            writer.writerow([line.strip()])  # Write each line
+
+    print(f"✅ Data successfully written to {output_file}")
+
+except FileNotFoundError:
+    print(f"❌ Error: {input_file} not found!")
+
+except Exception as e:
+    print(f"❌ Unexpected error: {e}")

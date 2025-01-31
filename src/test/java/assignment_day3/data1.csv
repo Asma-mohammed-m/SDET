@@ -1,0 +1,4 @@
+flag3,terminalId,hasRiskProfile,riskProfileId
+Basic,TEAAA098,No,342
+Business,TEAAA098,Yes,222
+Terminal,TEAAA098,Yes,1234
